@@ -8,7 +8,7 @@ export default function EditStudent() {
   const [student, setStudent] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/students/${id}`)
+    axios.get(`https://student-management-system-backend-e436.onrender.com/students/${id}`)
       .then(res => setStudent(res.data));
   }, [id]);
 
@@ -19,7 +19,7 @@ export default function EditStudent() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5001/students/${id}`, student)
+    axios.put(`https://student-management-system-backend-e436.onrender.com/students/${id}`, student)
       .then(() => navigate('/students'));
   };
 
